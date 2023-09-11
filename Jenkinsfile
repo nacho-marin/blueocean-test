@@ -66,10 +66,33 @@ pipeline {
       }
     }
 
-    stage('Integration Testing') {
-      steps {
-        echo 'Hey'
-        sh 'echo'
+    stage('Additional Automated Testing') {
+      parallel {
+        stage('') {
+          steps {
+            echo 'Hey'
+            sh 'echo'
+          }
+        }
+
+        stage('Functional Security Tests') {
+          steps {
+            sh 'echo'
+          }
+        }
+
+        stage('Integration Tests') {
+          steps {
+            sh 'echo'
+          }
+        }
+
+        stage('Performance Tests') {
+          steps {
+            sh 'echo'
+          }
+        }
+
       }
     }
 
